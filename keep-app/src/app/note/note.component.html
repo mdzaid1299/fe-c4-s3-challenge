@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 m-2  p-3 mb-5 bg-white rounded" *ngFor="let note of notes">
+      <mat-card class="example-card">
+        <mat-card-title>{{ note.title }} <span> <ng-container [ngSwitch]="note.priority">
+          <ng-container *ngSwitchCase="'Critical'"><mat-icon color="warn"  aria-hidden="false" aria-label="Example home icon" fontIcon="gpp_maybe"></mat-icon></ng-container>
+          <ng-container *ngSwitchCase="'High'"><mat-icon color="warn" aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_circle_up"></mat-icon></ng-container>
+          <ng-container *ngSwitchCase="'Low'"><mat-icon color="primary" aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_circle_down"></mat-icon></ng-container>
+          <ng-container *ngSwitchCase="'Medium'"> <mat-icon color="primary" aria-hidden="false" aria-label="Example home icon" fontIcon="remove_circle_outline"></mat-icon>
+          </ng-container>
+          <ng-container *ngSwitchDefault>Code Default</ng-container>
+      </ng-container></span></mat-card-title>
+       <small> {{note.date}}</small>
+        <mat-card-content>
+
+      <p class="text-center">{{ note.content }}</p>
+    </mat-card-content>
+    <div id="categoty">
+      {{note.category}}
+    </div>
+    </mat-card>
+   
+    </div>
+  </div>
+</div>
